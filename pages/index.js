@@ -1,28 +1,26 @@
-import Head from "next/head";
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import FeedbackForm from "@components/FeedbackForm";
-import JokeBlock from "@components/JokeBlock";
+import Head from 'next/head';
+import { Flex } from '@chakra-ui/react';
+import Footer from '@components/Footer';
+import Main from '@components/Main';
+import Navbar from '@components/Navbar';
+import FeedbackForm from '@components/ContactForm';
+import JokeBlock from '@components/JokeBlock';
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Next.js Toolbox</title>
+        <title>Linda Lunardi Psychotherapy and counselling</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Header title="Next.js Toolbox" />
-        <hr />
-        <p className="description">
-          Here's an example of a Netlify Form! When you fill this out, the
-          submissions can be found in the Netlify Admin site.
-        </p>
-        <FeedbackForm />
-        <JokeBlock />
-      </main>
-      <Footer />
+      <Flex direction="column" flex="1">
+        <Navbar />
+        <Main />
+        {/* <JokeBlock />
+        <FeedbackForm /> */}
+        <Footer />
+      </Flex>
     </div>
   );
 }
